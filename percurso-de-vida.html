@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percurso de Vida - Conta Certa</title>
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue: #0056b3; --green: #28a745; --white: #ffffff; }
+    body, h1, h2, p, a, button { font-family: 'Montserrat', sans-serif; margin:0; padding:0; }
+    body { background-color: var(--white); padding:16px; }
+    .w3-button { margin:8px 4px; transition: transform .2s, background-color .3s; }
+    .w3-button:hover { transform: scale(1.05); background-color: var(--green) !important; color: var(--white) !important; }
+    #buttons { text-align: center; margin-top: 40px; }
+    section { margin-top: 40px; display: none; }
+    h2 { color: var(--blue); margin-bottom: 16px; }
+    p, ul { line-height: 1.6; }
+    nav a { color: var(--blue); text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html">← Voltar ao Início</a></nav>
+  <h1 style="color:var(--blue); margin-top:16px;">Percurso de Vida</h1>
+  <div id="buttons">
+    <button class="w3-button w3-blue" onclick="showSection('estudar')">Estudar</button>
+    <button class="w3-button w3-blue" onclick="showSection('universidade')">Universidade</button>
+    <button class="w3-button w3-blue" onclick="showSection('trabalhar')">Começar a Trabalhar</button>
+    <button class="w3-button w3-blue" onclick="showSection('carro')">Comprar Carro</button>
+    <button class="w3-button w3-blue" onclick="showSection('casa')">Comprar Casa</button>
+    <button class="w3-button w3-blue" onclick="showSection('familia')">Constituir Família</button>
+    <button class="w3-button w3-blue" onclick="showSection('reforma')">Planear a Reforma</button>
+  </div>
+
+  <section id="estudar">
+    <h2>Estudar (15-18 anos)</h2>
+    <p>Aprende a gerir o teu primeiro orçamento mensal, definindo prioridades e categorizando despesas.</p>
+    <ul>
+      <li>Definir despesas fixas e variáveis</li>
+      <li>Uso responsável de cartões pré-pagos</li>
+      <li>Noções de taxa de juro simples</li>
+    </ul>
+  </section>
+
+  <section id="universidade">
+    <h2>Universidade (18-22 anos)</h2>
+    <p>Aprende a gerir bolsas de estudo, créditos universitários e o teu orçamento enquanto estudante.</p>
+    <ul>
+      <li>Gestão de propinas e taxas académicas</li>
+      <li>Planeamento de despesas de alojamento e material</li>
+      <li>Crédito estudantil e condições de reembolso</li>
+    </ul>
+  </section>
+
+  <section id="trabalhar">
+    <h2>Começar a Trabalhar (22-25 anos)</h2>
+    <p>Entende o rendimento líquido versus bruto e planeia despesas fixas como transporte e alimentação.</p>
+    <ul>
+      <li>Simular recibo de vencimento</li>
+      <li>Construir fundo de emergência</li>
+      <li>Introdução a descontos fiscais</li>
+    </ul>
+  </section>
+
+  <section id="carro">
+    <h2>Comprar Carro (23-26 anos)</h2>
+    <p>Avalia o custo total de posse de um veículo: crédito automóvel, seguro e manutenção.</p>
+    <ul>
+      <li>Comparar taxas de juro de crédito automóvel</li>
+      <li>Entender seguros obrigatórios</li>
+      <li>Calcular custos de manutenção anuais</li>
+    </ul>
+  </section>
+
+  <section id="casa">
+    <h2>Comprar Casa (25-30 anos)</h2>
+    <p>Prepara a entrada e simula amortizações, planeando o orçamento familiar a longo prazo.</p>
+    <ul>
+      <li>Simulador de crédito habitação</li>
+      <li>Estimar valor de entrada</li>
+      <li>Custos associados: avaliação, impostos, seguros</li>
+    </ul>
+  </section>
+
+  <section id="familia">
+    <h2>Constituir Família (27-35 anos)</h2>
+    <p>Orienta-te sobre aumentos de despesas, poupança para filhos e apoios estatais.</p>
+    <ul>
+      <li>Planeamento de despesas com filhos</li>
+      <li>Subsídios e benefícios familiares</li>
+      <li>Fundo para educação</li>
+    </ul>
+  </section>
+
+  <section id="reforma">
+    <h2>Planear a Reforma (desde 18 anos)</h2>
+    <p>Começa cedo a pensar na reforma: planos complementares e diferentes cenários de contribuição.</p>
+    <ul>
+      <li>Tipos de planos de pensões</li>
+      <li>Benefício fiscal de contribuições</li>
+      <li>Simulador de reforma</li>
+    </ul>
+  </section>
+
+  <script>
+    function showSection(id) {
+      ['estudar','universidade','trabalhar','carro','casa','familia','reforma'].forEach(f =>
+        document.getElementById(f).style.display = 'none'
+      );
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
 
