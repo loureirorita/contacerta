@@ -3,200 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conta Certa</title>
+  <title>Percurso de Vida - Conta Certa</title>
   <!-- W3.CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   <!-- Google Font: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
-    :root {
-      --blue: #0056b3; /* Azul mais escuro */
-      --green: #28a745;
-      --white: #ffffff;
-    }
-    body, h1, h2, h3, p, a, button {
-      font-family: 'Montserrat', sans-serif !important;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: var(--white);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    /* Sidebar */
-    .w3-sidebar {
-      background-color: var(--blue) !important;
-    }
-    .w3-sidebar a {
-      color: var(--white) !important;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .w3-sidebar a:hover {
-      background-color: var(--green) !important;
-    }
-    /* Header */
-    #showcase h1 {
-      color: var(--blue);
-      margin-bottom: 8px;
-    }
-    #showcase h2 {
-      color: var(--green);
-      margin-top: 0;
-    }
-    /* Buttons */
-    button, .w3-button {
-      transition: transform 0.2s, background-color 0.3s;
-    }
-    .w3-button:hover {
-      transform: scale(1.05);
-      background-color: var(--green) !important;
-      color: var(--white) !important;
-    }
-    /* Cards for Percurso */
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s;
-    }
-    .card:hover {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    /* Footer */
-    footer {
-      background-color: var(--blue) !important;
-      color: var(--white) !important;
-      padding: 32px 16px;
-    }
-    footer a {
-      color: var(--white) !important;
-      margin: 0 8px;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: var(--green) !important;
-    }
-    /* Section titles */
-    .section-title {
-      margin-top: 48px;
-      margin-bottom: 16px;
-      border-bottom: 3px solid var(--blue);
-      display: inline-block;
-    }
-    .w3-main {
-      margin-left:250px;
-      padding: 16px;
-    }
+    :root { --blue: #0056b3; --green: #28a745; --white: #ffffff; }
+    body, h1, h2, p, a, button { font-family: 'Montserrat', sans-serif; margin:0; padding:0; }
+    body { background-color: var(--white); padding:16px; }
+    .w3-button { margin:8px 4px; transition: transform .2s, background-color .3s; }
+    .w3-button:hover { transform: scale(1.05); background-color: var(--green) !important; color: var(--white) !important; }
+    #buttons { text-align: center; margin-top: 40px; }
+    section { margin-top: 40px; display: none; }
+    h2 { color: var(--blue); margin-bottom: 16px; }
+    p { line-height: 1.6; }
+    nav a { color: var(--blue); text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:250px;" id="mySidebar">
-  <div class="w3-container w3-padding-16">
-    <h3 class="w3-text-white"><b>Conta Certa</b></h3>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#percurso" class="w3-bar-item w3-button">Percurso de Vida</a>
-    <a href="#dicionario" class="w3-bar-item w3-button">Dicionário</a>
-    <a href="#videos" class="w3-bar-item w3-button">Vídeos e Testemunhos</a>
-  </div>
-</nav>
-
-<!-- Overlay for small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
-
-<!-- Page Content -->
-<div class="w3-main">
-
-  <!-- Top header for small screens -->
-  <header class="w3-container w3-top w3-hide-large w3-padding-16" style="background-color: var(--blue); color: var(--white);">
-    <span>Conta Certa</span>
-    <a href="javascript:void(0)" class="w3-button w3-display-topright" onclick="w3_open()">☰</a>
-  </header>
-
-  <!-- Showcase -->
-  <div id="showcase" class="w3-container" style="margin-top:80px">
-    <h1 class="w3-xxlarge"><b>Entende o teu dinheiro.</b></h1>
-    <h2 class="w3-large"><i>Controla o teu futuro.</i></h2>
+  <nav><a href="index.html">← Voltar ao Início</a></nav>
+  <h1 style="color:var(--blue); margin-top:16px;">Percurso de Vida</h1>
+  <div id="buttons">
+    <button class="w3-button w3-blue" onclick="showSection('estudar')">Estudar</button>
+    <button class="w3-button w3-blue" onclick="showSection('trabalhar')">Começar a Trabalhar</button>
+    <button class="w3-button w3-blue" onclick="showSection('carro')">Comprar Carro</button>
+    <button class="w3-button w3-blue" onclick="showSection('casa')">Comprar Casa</button>
+    <button class="w3-button w3-blue" onclick="showSection('familia')">Constituir Família</button>
+    <button class="w3-button w3-blue" onclick="showSection('reforma')">Planear a Reforma</button>
   </div>
 
-  <!-- Intro Text -->
-  <div class="w3-container w3-section">
-    <p>Bem-vindo à Conta Certa! Aqui encontrarás ferramentas e orientações para gerir as tuas finanças pessoais e planear cada etapa da tua vida financeira, dos 15 aos 25 anos. Navega pelo menu à esquerda para começar!</p>
-  </div>
+  <section id="estudar">
+    <h2>Estudar (15-18 anos)</h2>
+    <p>Aprende a gerir o teu primeiro orçamento mensal, definindo prioridades entre material escolar, lazer e poupança.</p>
+    <ul>
+      <li>Definir despesas fixas e variáveis</li>
+      <li>Uso responsável do cartão pré-pago</li>
+      <li>Noções de taxa de juro simples</li>
+    </ul>
+  </section>
 
-  <!-- Percurso de Vida -->
-  <div id="percurso" class="w3-container">
-    <h3 class="section-title">Percurso de Vida</h3>
-    <div class="card">
-      <h4>15-18 anos: Introdução ao Orçamento</h4>
-      <p>Aprende a criar o teu primeiro orçamento e a distinguir entre necessidades e desejos.</p>
-    </div>
-    <div class="card">
-      <h4>18-21 anos: Gestão de Poupanças</h4>
-      <p>Descobre estratégias para poupar eficazmente e equilibrar gastos com objetivos.</p>
-    </div>
-    <div class="card">
-      <h4>21-25 anos: Investimento Inicial</h4>
-      <p>Explora opções seguras de investimento e começa a fazer o teu dinheiro trabalhar para ti.</p>
-    </div>
-  </div>
+  <section id="trabalhar">
+    <h2>Começar a Trabalhar (18-21 anos)</h2>
+    <p>Entende o impacto do rendimento líquido versus bruto e aprende a planear gastos fixos como transporte e alimentação.</p>
+    <ul>
+      <li>Simular recibo de vencimento</li>
+      <li>Construir fundo de emergência</li>
+      <li>Introdução a descontos fiscais</li>
+    </ul>
+  </section>
 
-  <!-- Dicionário -->
-  <div id="dicionario" class="w3-container">
-    <h3 class="section-title">Dicionário</h3>
-    <div class="card">
-      <h4>Rendimento</h4>
-      <p>Total de dinheiro que recebes, seja através de salários, bolsas ou outras fontes.</p>
-    </div>
-    <div class="card">
-      <h4>Despesa Fixa</h4>
-      <p>Despesas regulares e previsíveis, como renda, eletricidade e internet.</p>
-    </div>
-  </div>
+  <section id="carro">
+    <h2>Comprar Carro (20-23 anos)</h2>
+    <p>Avalia o custo total de posse de um veículo, incluindo crédito automóvel, seguro e manutenção.</p>
+    <ul>
+      <li>Comparar taxas de juro de crédito automóvel</li>
+      <li>Entender seguros obrigatórios</li>
+      <li>Calcular custos de manutenção anuais</li>
+    </ul>
+  </section>
 
-  <!-- Vídeos e Testemunhos -->
-  <div id="videos" class="w3-container">
-    <h3 class="section-title">Vídeos e Testemunhos</h3>
-    <div class="card">
-      <h4>Como montar um Orçamento (Vídeo)</h4>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="card">
-      <h4>Testemunho da Ana</h4>
-      <p>"Com a Conta Certa, aprendi a poupar e hoje tenho segurança para enfrentar imprevistos."</p>
-    </div>
-  </div>
+  <section id="casa">
+    <h2>Comprar Casa (22-25 anos)</h2>
+    <p>Prepara a entrada, simula amortizações e planeia o orçamento familiar a longo prazo.</p>
+    <ul>
+      <li>Simulador de Crédito Habitação</li>
+      <li>Estimar valor de entrada</li>
+      <li>Custos associados: avaliação, impostos, seguros</li>
+    </ul>
+  </section>
 
-  <!-- Footer -->
-  <footer class="w3-container w3-center">
-    <p><strong>Contactos:</strong> +351 912 345 678</p>
-    <p>
-      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-    </p>
-  </footer>
+  <section id="familia">
+    <h2>Constituir Família (23-25 anos)</h2>
+    <p>Orienta-te sobre aumentos de despesas, poupança para as próximas fases e apoios estatais.</p>
+    <ul>
+      <li>Planeamento de despesas com filhos</li>
+      <li>Subsidios e benefícios</li>
+      <li>Fundo para educação</li>
+    </ul>
+  </section>
 
-</div>
+  <section id="reforma">
+    <h2>Planear a Reforma (desde 18 anos)</h2>
+    <p>Começa cedo a pensar na reforma, conhecendo planos complementares e simulando diferentes cenários.</p>
+    <ul>
+      <li>Tipos de planos de pensões</li>
+      <li>Benefício fiscal de contribuições</li>
+      <li>Simulador de reformas</li>
+    </ul>
+  </section>
 
-<script>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
+  <script>
+    function showSection(id) {
+      ['estudar','trabalhar','carro','casa','familia','reforma'].forEach(f => document.getElementById(f).style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
