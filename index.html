@@ -12,41 +12,86 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     :root {
-      --blue: #007bff;
+      --blue: #0056b3; /* Azul mais escuro */
       --green: #28a745;
       --white: #ffffff;
     }
-    body, h1, h2, h3, h4, h5 {
+    body, h1, h2, h3, p, a, button {
       font-family: 'Montserrat', sans-serif !important;
+      margin: 0;
+      padding: 0;
     }
     body {
       background-color: var(--white);
       font-size: 16px;
-      margin: 0;
+      line-height: 1.6;
     }
+    /* Sidebar */
     .w3-sidebar {
       background-color: var(--blue) !important;
     }
     .w3-sidebar a {
       color: var(--white) !important;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
     .w3-sidebar a:hover {
       background-color: var(--green) !important;
     }
-    header, .w3-container p, footer p {
-      font-family: 'Montserrat', sans-serif;
+    /* Header */
+    #showcase h1 {
+      color: var(--blue);
+      margin-bottom: 8px;
     }
+    #showcase h2 {
+      color: var(--green);
+      margin-top: 0;
+    }
+    /* Buttons */
+    button, .w3-button {
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .w3-button:hover {
+      transform: scale(1.05);
+      background-color: var(--green) !important;
+      color: var(--white) !important;
+    }
+    /* Cards for Percurso */
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* Footer */
     footer {
       background-color: var(--blue) !important;
       color: var(--white) !important;
+      padding: 32px 16px;
     }
     footer a {
       color: var(--white) !important;
       margin: 0 8px;
+      transition: color 0.3s;
     }
     footer a:hover {
       color: var(--green) !important;
+    }
+    /* Section titles */
+    .section-title {
+      margin-top: 48px;
+      margin-bottom: 16px;
+      border-bottom: 3px solid var(--blue);
+      display: inline-block;
+    }
+    .w3-main {
+      margin-left:250px;
+      padding: 16px;
     }
   </style>
 </head>
@@ -68,7 +113,7 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
 <!-- Page Content -->
-<div class="w3-main" style="margin-left:250px">
+<div class="w3-main">
 
   <!-- Top header for small screens -->
   <header class="w3-container w3-top w3-hide-large w3-padding-16" style="background-color: var(--blue); color: var(--white);">
@@ -76,11 +121,10 @@
     <a href="javascript:void(0)" class="w3-button w3-display-topright" onclick="w3_open()">☰</a>
   </header>
 
-  <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-xxlarge" style="color: var(--blue);"><b>Entende o teu dinheiro.</b></h1>
-    <h2 class="w3-large" style="color: var(--green);"><i>Controla o teu futuro.</i></h2>
-    <hr style="width:60px;border:4px solid var(--blue);" class="w3-round">
+  <!-- Showcase -->
+  <div id="showcase" class="w3-container" style="margin-top:80px">
+    <h1 class="w3-xxlarge"><b>Entende o teu dinheiro.</b></h1>
+    <h2 class="w3-large"><i>Controla o teu futuro.</i></h2>
   </div>
 
   <!-- Intro Text -->
@@ -88,8 +132,51 @@
     <p>Bem-vindo à Conta Certa! Aqui encontrarás ferramentas e orientações para gerir as tuas finanças pessoais e planear cada etapa da tua vida financeira, dos 15 aos 25 anos. Navega pelo menu à esquerda para começar!</p>
   </div>
 
+  <!-- Percurso de Vida -->
+  <div id="percurso" class="w3-container">
+    <h3 class="section-title">Percurso de Vida</h3>
+    <div class="card">
+      <h4>15-18 anos: Introdução ao Orçamento</h4>
+      <p>Aprende a criar o teu primeiro orçamento e a distinguir entre necessidades e desejos.</p>
+    </div>
+    <div class="card">
+      <h4>18-21 anos: Gestão de Poupanças</h4>
+      <p>Descobre estratégias para poupar eficazmente e equilibrar gastos com objetivos.</p>
+    </div>
+    <div class="card">
+      <h4>21-25 anos: Investimento Inicial</h4>
+      <p>Explora opções seguras de investimento e começa a fazer o teu dinheiro trabalhar para ti.</p>
+    </div>
+  </div>
+
+  <!-- Dicionário -->
+  <div id="dicionario" class="w3-container">
+    <h3 class="section-title">Dicionário</h3>
+    <div class="card">
+      <h4>Rendimento</h4>
+      <p>Total de dinheiro que recebes, seja através de salários, bolsas ou outras fontes.</p>
+    </div>
+    <div class="card">
+      <h4>Despesa Fixa</h4>
+      <p>Despesas regulares e previsíveis, como renda, eletricidade e internet.</p>
+    </div>
+  </div>
+
+  <!-- Vídeos e Testemunhos -->
+  <div id="videos" class="w3-container">
+    <h3 class="section-title">Vídeos e Testemunhos</h3>
+    <div class="card">
+      <h4>Como montar um Orçamento (Vídeo)</h4>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="card">
+      <h4>Testemunho da Ana</h4>
+      <p>"Com a Conta Certa, aprendi a poupar e hoje tenho segurança para enfrentar imprevistos."</p>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-center" style="margin-top:50px;">
+  <footer class="w3-container w3-center">
     <p><strong>Contactos:</strong> +351 912 345 678</p>
     <p>
       <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -101,7 +188,6 @@
 </div>
 
 <script>
-// Open/close sidebar for small screens
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
